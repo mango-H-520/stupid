@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>中招啦</title>
+    <style>
+        body{background:#111;overflow:hidden;}
+        .box{
+            position:absolute;
+            padding:20px;
+            background:#fff;
+            border:3px solid red;
+            border-radius:10px;
+            text-align:center;
+            font-size:25px;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+<script>
+// 恶搞文案表情包语录
+let txt = [
+    "笑死我了😂",
+    "你完蛋咯😏",
+    "大冤种就是你",
+    "被我拿捏了",
+    "退！退！退！",
+    "无语住了",
+    "快投降吧",
+    "笨蛋已上线",
+    "乖乖认栽",
+    "哈哈哈破防啦"
+]
+
+// 无限随机弹窗
+function pop(){
+    let div = document.createElement('div')
+    div.className = "box"
+    div.innerText = txt[Math.floor(Math.random()*txt.length)]
+    div.style.left = Math.random()*innerWidth + "px"
+    div.style.top = Math.random()*innerHeight + "px"
+    document.body.appendChild(div)
+}
+// 疯狂弹出
+setInterval(pop,80)
+
+// 强制alert弹窗
+setInterval(()=>{
+    alert("😜 又一个弹窗来袭！")
+},1500)
+</script>
+</body>
+</html>
